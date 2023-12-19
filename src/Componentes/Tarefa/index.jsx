@@ -1,11 +1,17 @@
 import React from "react";
 import { ContainerTarefa, InputTarefa } from "./style";
-
-export default function Tarefa() {
+import iconeX from "./assets/icon-cross.svg";
+import iconeCheck from "./assets/icon-check.svg";
+export default function Tarefa({ item }) {
   return (
     <ContainerTarefa>
-      <InputTarefa type="checkbox" />
-      <p>Aqui vai a sua tarefa</p>
+      <div>
+        <label>
+          <InputTarefa type="checkbox" icone={iconeCheck} />
+          <span>{item}</span>
+        </label>
+      </div>
+      <img src={iconeX} />
     </ContainerTarefa>
   );
 }
