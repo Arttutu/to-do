@@ -40,4 +40,8 @@ export const ContainerTitulo = styled.div`
     width: 24px;
     height: 24px;
   }
+  @media (max-width: 768px) {
+    width: 325px;
+    height: 20px;
+  }
 `;

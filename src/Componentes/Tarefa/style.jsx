@@ -14,6 +14,7 @@ export const ContainerTarefa = styled.div`
   box-sizing: border-box;
   padding-right: 24px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: ${CorBranca};
@@ -34,7 +35,6 @@ export const ContainerTarefa = styled.div`
   }
   @media (max-width: 768px) {
     width: 327px;
-    height: 48px;
   }
   &:hover {
     img {

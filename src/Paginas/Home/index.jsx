@@ -5,6 +5,7 @@ import lua from "./assets/icon-moon.svg";
 import TarefaInput from "../../Componentes/TarefaInput";
 import Tarefa from "../../Componentes/Tarefa";
 import ControladorTarefa from "../../Componentes/ControladorTarefa";
+
 export default function Home() {
   const [tarefa, setTarefa] = useState([
     "Ler por 1 hora",
@@ -13,6 +14,7 @@ export default function Home() {
     "Caminhar no parke 3 vezes",
     "Pick up groceries",
   ]);
+
   return (
     <>
       <Main>
@@ -22,9 +24,15 @@ export default function Home() {
             <h1>todo</h1>
             <img src={lua} alt="Um icone em formato de Lua" />
           </ContainerTitulo>
-          <TarefaInput />
+          <TarefaInput adicionarTarefa={setTarefa} />
           {tarefa.map((item, index) => (
-            <Tarefa key={index} item={item} />
+            <Tarefa
+              key={index}
+              item={item}
+              index={index} // Passa o índice para a tarefa
+              removerTarefa={setTarefa}
+              tarefa={tarefa}
+            />
           ))}
           <ControladorTarefa />
         </ContainerSection>
