@@ -30,9 +30,14 @@ export const ContainerTarefa = styled.div`
   label input:checked + span {
     text-decoration: line-through;
   }
-  img {
-    display: none;
+  button {
+    border: none;
+    background-color: ${CorBranca};
+    img {
+      display: none;
+    }
   }
+
   @media (max-width: 768px) {
     width: 327px;
   }

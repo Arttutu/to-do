@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Banner, ContainerSection, ContainerTitulo, Main } from "./styled";
-import banner from "./assets/bg-desktop-light.jpg";
-import lua from "./assets/icon-moon.svg";
-import TarefaInput from "../../Componentes/TarefaInput";
-import Tarefa from "../../Componentes/Tarefa";
-import ControladorTarefa from "../../Componentes/ControladorTarefa";
+import React, { useState } from "react"
+import { Banner, ContainerSection, ContainerTitulo, Main } from "./styled"
+import banner from "./assets/bg-desktop-light.jpg"
+import lua from "./assets/icon-moon.svg"
+import TarefaInput from "../../Componentes/TarefaInput"
+import Tarefa from "../../Componentes/Tarefa"
+import ControladorTarefa from "../../Componentes/ControladorTarefa"
 
 export default function Home() {
   const [tarefa, setTarefa] = useState([
@@ -13,7 +13,14 @@ export default function Home() {
     "10 minutos de meditação",
     "Caminhar no parke 3 vezes",
     "Pick up groceries",
-  ]);
+  ])
+
+  const RemoverTarefa = (indexParaRemover) => {
+    const novaListaTarefas = tarefa.filter(
+      (_, index) => index !== indexParaRemover
+    ) // _, convencao indica que nao vamos usar o valor do array, o segundo parametro indica o índice que nesse caso queremos usar
+    setTarefa(novaListaTarefas)
+  }
 
   return (
     <>
@@ -29,8 +36,8 @@ export default function Home() {
             <Tarefa
               key={index}
               item={item}
-              index={index} // Passa o índice para a tarefa
-              removerTarefa={setTarefa}
+              index={index}
+              removerTarefa={RemoverTarefa}
               tarefa={tarefa}
             />
           ))}
@@ -38,5 +45,5 @@ export default function Home() {
         </ContainerSection>
       </Main>
     </>
-  );
+  )
 }

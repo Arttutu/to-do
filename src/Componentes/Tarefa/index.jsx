@@ -3,12 +3,7 @@ import { ContainerTarefa, InputTarefa } from "./style";
 import iconeX from "./assets/icon-cross.svg";
 import iconeCheck from "./assets/icon-check.svg";
 
-export default function Tarefa({ item, removerTarefa, index, tarefa }) {
-  const RemoverTarefa = (index) => {
-    const novaListaTarefas = tarefa.filter((_, i) => i !== index);
-    removerTarefa(novaListaTarefas);
-  };
-
+export default function Tarefa({ item, index, removerTarefa }) {
   return (
     <ContainerTarefa>
       <div>
@@ -17,7 +12,9 @@ export default function Tarefa({ item, removerTarefa, index, tarefa }) {
           <span>{item}</span>
         </label>
       </div>
-      <img src={iconeX} alt="Ícone de Remoção" onClick={RemoverTarefa} />
+      <button onClick={() => removerTarefa(index)}>
+        <img src={iconeX} alt="Ícone de Remoção" />
+      </button>
     </ContainerTarefa>
   );
 }
