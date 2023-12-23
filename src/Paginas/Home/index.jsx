@@ -37,7 +37,7 @@ export default function Home() {
   const marcarCompleta = (index) => {
     const novaListaTarefa = tarefa.map((item, i) => {
       if (i === index) {
-        return { ...item, isComplete: true }
+        return { ...item, isComplete: !item.isComplete }
       }
       return item
     })
