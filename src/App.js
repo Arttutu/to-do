@@ -1,10 +1,12 @@
-import Home from "./Paginas/Home";
-
+import { TarefaProvider } from "./Componentes/Commun/Context/tarefaContext"
+import Home from "./Paginas/Home"
 
 function App() {
   return (
-    <Home />
-  );
+    <TarefaProvider>
+      <Home />
+    </TarefaProvider>
+  )
 }
 
-export default App;
+export default App

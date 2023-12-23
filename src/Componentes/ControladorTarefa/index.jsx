@@ -1,12 +1,10 @@
 import React from "react"
 import { ContainerControlador, ContainerControladorMobile } from "./style"
+import { useTarefaContex } from "../Commun/Context/tarefaContext"
 
-export default function ControladorTarefa({
-  mostrarTodas,
-  mostrarAtivas,
-  LimparCompleta,
-  MostrarCompletas,
-}) {
+export default function ControladorTarefa() {
+  const { mostrarTodas, mostrarAtivas, MostrarCompletas, LimparCompleta } =
+    useTarefaContex()
   return (
     <>
       <ContainerControlador>
