@@ -1,25 +1,30 @@
-import React from "react";
-import { ContainerControlador, ContainerControladorMobile } from "./style";
+import React from "react"
+import { ContainerControlador, ContainerControladorMobile } from "./style"
 
-export default function ControladorTarefa() {
+export default function ControladorTarefa({
+  mostrarTodas,
+  mostrarAtivas,
+  LimparCompleta,
+  MostrarCompletas,
+}) {
   return (
     <>
       <ContainerControlador>
         <span>Itens restantes</span>
         <div>
-          <button>Todas</button>
-          <button>Ativa</button>
-          <button>Completa</button>
+          <button onClick={() => mostrarTodas()}>Todas</button>
+          <button onClick={() => mostrarAtivas()}>Ativa</button>
+          <button onClick={() => MostrarCompletas()}>Completa</button>
         </div>
-        <button>Limpar Completa</button>
+        <button onClick={() => LimparCompleta()}>Limpar Completa</button>
       </ContainerControlador>
       <ContainerControladorMobile>
         <div>
-          <button>Todas</button>
-          <button>Ativa</button>
-          <button>Completa</button>
+          <button onClick={() => mostrarTodas()}>Todas</button>
+          <button onClick={() => mostrarAtivas()}>Ativa</button>
+          <button onClick={() => MostrarCompletas()}>Completa</button>
         </div>
       </ContainerControladorMobile>
     </>
-  );
+  )
 }

@@ -1,13 +1,20 @@
-import React, { useState } from "react";
-import { ContainerEnviar, InputEnviar, InputTexto } from "./style";
+import React, { useState } from "react"
+import { ContainerEnviar, InputEnviar, InputTexto } from "./style"
 
 export default function TarefaInput({ adicionarTarefa }) {
-  const [novaTarefa, setNovaTarefa] = useState(""); // Estado para controlar o valor do input
+  const [novaTarefa, setNovaTarefa] = useState("") // Estado para controlar o valor do input
+
   const EnviarTarefa = (event) => {
-    event.preventDefault();
-    adicionarTarefa((tarefas) => [...tarefas, novaTarefa]); // Adiciona a nova tarefa usando o valor do estado novaTarefa
-    setNovaTarefa(""); // Limpa o input após adicionar a tarefa
-  };
+    event.preventDefault()
+    if (novaTarefa.trim() !== "") {
+      const novaTarefaObj = {
+        titulo: novaTarefa,
+        isComplete: false,
+      }
+      adicionarTarefa((tarefas) => [...tarefas, novaTarefaObj]) // Adiciona o novo objeto de tarefa
+      setNovaTarefa("") // Limpa o input após adicionar a tarefa
+    }
+  }
 
   return (
     <ContainerEnviar onSubmit={EnviarTarefa}>
@@ -18,5 +25,5 @@ export default function TarefaInput({ adicionarTarefa }) {
         onChange={(e) => setNovaTarefa(e.target.value)} // Atualiza o estado conforme o usuário digita
       />
     </ContainerEnviar>
-  );
+  )
 }

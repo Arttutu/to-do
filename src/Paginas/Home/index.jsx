@@ -8,11 +8,18 @@ import ControladorTarefa from "../../Componentes/ControladorTarefa"
 
 export default function Home() {
   const [tarefa, setTarefa] = useState([
-    "Ler por 1 hora",
-    "Terminar todos os desafios do FronEnd Mentor",
-    "10 minutos de meditação",
-    "Caminhar no parke 3 vezes",
-    "Pick up groceries",
+    {
+      titulo: "Ler por 1 hora",
+      isComplete: false,
+    },
+    {
+      titulo: "Ler por 1 hora",
+      isComplete: false,
+    },
+    {
+      titulo: "Ler por 1 hora",
+      isComplete: false,
+    },
   ])
 
   const RemoverTarefa = (indexParaRemover) => {
@@ -21,7 +28,25 @@ export default function Home() {
     ) // _, convencao indica que nao vamos usar o valor do array, o segundo parametro indica o índice que nesse caso queremos usar
     setTarefa(novaListaTarefas)
   }
+  const mostrarTodas = () => {}
+  const LimparCompleta = () => {
+    const novaListaTarefas = tarefa.filter((item) => !item.isComplete)
+    setTarefa(novaListaTarefas)
+  }
+  const mostrarAtivas = () => {}
+  const marcarCompleta = (index) => {
+    const novaListaTarefa = tarefa.map((item, i) => {
+      if (i === index) {
+        return { ...item, isComplete: true }
+      }
+      return item
+    })
 
+    console.log(novaListaTarefa)
+    setTarefa(novaListaTarefa)
+  }
+
+  const MostrarCompletas = () => {}
   return (
     <>
       <Main>
@@ -35,13 +60,18 @@ export default function Home() {
           {tarefa.map((item, index) => (
             <Tarefa
               key={index}
-              item={item}
+              item={item.titulo}
               index={index}
               removerTarefa={RemoverTarefa}
-              tarefa={tarefa}
+              marcarCompleta={marcarCompleta}
             />
           ))}
-          <ControladorTarefa />
+          <ControladorTarefa
+            mostrarTodas={mostrarTodas}
+            mostrarAtivas={mostrarAtivas}
+            LimparCompleta={LimparCompleta}
+            MostrarCompletas={MostrarCompletas}
+          />
         </ContainerSection>
       </Main>
     </>
