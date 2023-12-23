@@ -18,14 +18,15 @@ export const TarefaProvider = ({ children }) => {
       isComplete: false,
     },
   ])
+  const [filtro, setFiltro] = useState("todas")
   return (
-    <TarefaContext.Provider value={{ tarefa, setTarefa }}>
+    <TarefaContext.Provider value={{ tarefa, setTarefa, filtro, setFiltro }}>
       {children}
     </TarefaContext.Provider>
   )
 }
 export const useTarefaContex = () => {
-  const { tarefa, setTarefa } = useContext(TarefaContext)
+  const { tarefa, setTarefa, filtro, setFiltro } = useContext(TarefaContext)
 
   const RemoverTarefa = (indexParaRemover) => {
     const novaListaTarefas = tarefa.filter(
@@ -33,12 +34,10 @@ export const useTarefaContex = () => {
     )
     setTarefa(novaListaTarefas)
   }
-  const mostrarTodas = () => {}
   const LimparCompleta = () => {
     const novaListaTarefas = tarefa.filter((item) => !item.isComplete)
     setTarefa(novaListaTarefas)
   }
-  const mostrarAtivas = () => {}
   const marcarCompleta = (index) => {
     const novaListaTarefa = tarefa.map((item, i) => {
       if (i === index) {
@@ -50,9 +49,6 @@ export const useTarefaContex = () => {
     console.log(novaListaTarefa)
     setTarefa(novaListaTarefa)
   }
-
-  const MostrarCompletas = () => {}
-
   const adicionarTarefa = (novaTarefa) => {
     const novaTarefaObj = {
       titulo: novaTarefa,
@@ -63,10 +59,9 @@ export const useTarefaContex = () => {
   return {
     tarefa,
     setTarefa,
+    filtro,
+    setFiltro,
     RemoverTarefa,
-    mostrarAtivas,
-    mostrarTodas,
-    MostrarCompletas,
     adicionarTarefa,
     marcarCompleta,
     LimparCompleta,

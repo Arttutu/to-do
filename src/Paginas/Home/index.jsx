@@ -8,7 +8,7 @@ import ControladorTarefa from "../../Componentes/ControladorTarefa"
 import { useTarefaContex } from "../../Componentes/Commun/Context/tarefaContext"
 
 export default function Home() {
-  const { tarefa } = useTarefaContex()
+  const { tarefa, filtro } = useTarefaContex()
   return (
     <>
       <Main>
@@ -19,9 +19,17 @@ export default function Home() {
             <img src={lua} alt="Um icone em formato de Lua" />
           </ContainerTitulo>
           <TarefaInput />
-          {tarefa.map((item, index) => (
-            <Tarefa key={index} item={item.titulo} index={index} />
-          ))}
+          {tarefa
+            .filter((tarefa) =>
+              filtro === "todas"
+                ? true
+                : filtro === "completa"
+                ? tarefa.isComplete
+                : !tarefa.isComplete
+            )
+            .map((item, index) => (
+              <Tarefa key={index} item={item.titulo} index={index} />
+            ))}
           <ControladorTarefa />
         </ContainerSection>
       </Main>
