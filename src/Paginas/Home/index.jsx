@@ -1,6 +1,13 @@
 import React from "react"
-import { Banner, ContainerSection, ContainerTitulo, Main } from "./styled"
+import {
+  Banner,
+  BannerMobile,
+  ContainerSection,
+  ContainerTitulo,
+  Main,
+} from "./styled"
 import banner from "./assets/bg-desktop-light.jpg"
+import bannerMobile from "./assets/bg-mobile-light.jpg"
 import lua from "./assets/icon-moon.svg"
 import TarefaInput from "../../Componentes/TarefaInput"
 import Tarefa from "../../Componentes/Tarefa"
@@ -13,6 +20,7 @@ export default function Home() {
     <>
       <Main>
         <Banner src={banner} alt="banner do site de tarefas desktop" />
+        <BannerMobile src={bannerMobile} />
         <ContainerSection>
           <ContainerTitulo>
             <h1>todo</h1>
@@ -24,8 +32,8 @@ export default function Home() {
               filtro === "todas"
                 ? true
                 : filtro === "completa"
-                ? tarefa.isComplete
-                : !tarefa.isComplete
+                ? !tarefa.isComplete
+                : tarefa.isComplete
             )
             .map((item, index) => (
               <Tarefa key={index} item={item.titulo} index={index} />

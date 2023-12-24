@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useState } from "react"
 
 export const TarefaContext = createContext()
 TarefaContext.displayName = "Tarefas"
@@ -19,6 +19,7 @@ export const TarefaProvider = ({ children }) => {
     },
   ])
   const [filtro, setFiltro] = useState("todas")
+
   return (
     <TarefaContext.Provider value={{ tarefa, setTarefa, filtro, setFiltro }}>
       {children}
@@ -35,8 +36,8 @@ export const useTarefaContex = () => {
     setTarefa(novaListaTarefas)
   }
   const LimparCompleta = () => {
-    const novaListaTarefas = tarefa.filter((item) => !item.isComplete)
-    setTarefa(novaListaTarefas)
+    const filtrarTarefas = tarefa.filter((item) => item.isComplete === false)
+    setTarefa(filtrarTarefas)
   }
   const marcarCompleta = (index) => {
     const novaListaTarefa = tarefa.map((item, i) => {

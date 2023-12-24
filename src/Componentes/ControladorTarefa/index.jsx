@@ -3,11 +3,11 @@ import { ContainerControlador, ContainerControladorMobile } from "./style"
 import { useTarefaContex } from "../Commun/Context/tarefaContext"
 
 export default function ControladorTarefa() {
-  const { LimparCompleta, setFiltro } = useTarefaContex()
+  const { LimparCompleta, setFiltro, tarefa } = useTarefaContex()
   return (
     <>
       <ContainerControlador>
-        <span>Itens restantes</span>
+        <span>{tarefa.length} itens restantes </span>
         <div>
           <button onClick={() => setFiltro("todas")}>Todas</button>
           <button onClick={() => setFiltro("ativa")}>Ativa</button>

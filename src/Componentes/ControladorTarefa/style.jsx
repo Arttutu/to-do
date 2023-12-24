@@ -1,22 +1,25 @@
-import styled from "styled-components";
-import { CorBranca, Font, corAtiva, corTexto } from "../Variaveis";
+import styled from "styled-components"
+import { CorBranca, Font, corAtiva, corTexto, corTexto2 } from "../Variaveis"
 
 export const ContainerControlador = styled.div`
   width: 540px;
   height: 64px;
-  font-family: ${Font};
-  font-size: 14px;
-  color: ${corTexto};
-  background-color: ${CorBranca};
   display: flex;
+  background-color: ${CorBranca};
   align-items: center;
   justify-content: space-around;
+  > span {
+    font-size: 14px;
+    color: ${corTexto2};
+    font-family: ${Font};
+  }
   > div {
     display: flex;
     align-items: center;
     button {
-      font-family: ${Font};
       font-size: 14px;
+      font-family: ${Font};
+      font-weight: bold;
       color: ${corTexto};
       cursor: pointer;
       border: none;
@@ -28,9 +31,9 @@ export const ContainerControlador = styled.div`
     }
   }
   button {
-    font-family: ${Font};
     font-size: 14px;
     color: ${corTexto};
+    font-family: ${Font};
     cursor: pointer;
     border: none;
     background-color: ${CorBranca};
@@ -46,7 +49,7 @@ export const ContainerControlador = styled.div`
       display: none;
     }
   }
-`;
+`
 export const ContainerControladorMobile = styled.div`
   display: none;
   @media (max-width: 768px) {
@@ -70,4 +73,4 @@ export const ContainerControladorMobile = styled.div`
       }
     }
   }
-`;
+`

@@ -4,7 +4,6 @@ import { CorBranca, CorCinza, Font, corTexto } from "../Variaveis"
 export const InputTarefa = styled.input`
   width: 24px;
   height: 24px;
-  border-radius: 50%;
   margin-left: 24px;
 `
 
