@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { CorBranca, CorCinza, Font, corTexto } from "../Variaveis"
+import { Font } from "../Variaveis"
 
 export const ContainerEnviar = styled.form`
   width: 540px;

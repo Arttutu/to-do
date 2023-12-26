@@ -17,9 +17,12 @@ import Tarefa from "../../Componentes/Tarefa"
 import ControladorTarefa from "../../Componentes/ControladorTarefa"
 import { useTarefaContex } from "../../Componentes/Commun/Context/tarefaContext"
 
-export default function Home({ tema }) {
+export default function Home({ tema, setTema }) {
   const { tarefa, filtro } = useTarefaContex()
-
+  const TemaLayouts = (tema) => (tema === "Light" ? "Dark" : "Light")
+  const MudarTema = () => {
+    setTema(TemaLayouts)
+  }
   return (
     <>
       <Main>
@@ -33,9 +36,11 @@ export default function Home({ tema }) {
         <ContainerSection>
           <ContainerTitulo>
             <h1>todo</h1>
+
             <img
               src={tema === "Light" ? lua : sol}
               alt="Um icone em formato de Lua"
+              onClick={() => MudarTema()}
             />
           </ContainerTitulo>
           <TarefaInput />
