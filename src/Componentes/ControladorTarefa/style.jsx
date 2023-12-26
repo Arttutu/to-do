@@ -5,7 +5,7 @@ export const ContainerControlador = styled.div`
   width: 540px;
   height: 64px;
   display: flex;
-  background-color: ${CorBranca};
+  background-color: ${(props) => props.theme.colors.corContainer};
   align-items: center;
   justify-content: space-around;
   > span {
@@ -23,7 +23,7 @@ export const ContainerControlador = styled.div`
       color: ${corTexto};
       cursor: pointer;
       border: none;
-      background-color: ${CorBranca};
+      background-color: ${(props) => props.theme.colors.corContainer};
       transition: 0.3s;
       &:hover {
         color: ${corAtiva};
@@ -36,7 +36,7 @@ export const ContainerControlador = styled.div`
     font-family: ${Font};
     cursor: pointer;
     border: none;
-    background-color: ${CorBranca};
+    background-color: ${(props) => props.theme.colors.corContainer};
     transition: 0.3s;
     &:hover {
       color: ${corAtiva};
@@ -59,14 +59,14 @@ export const ContainerControladorMobile = styled.div`
     width: 327px;
     height: 64px;
     margin-top: 16px;
-    background-color: ${CorBranca};
+    background-color: ${(props) => props.theme.colors.corContainer};
     button {
       font-family: ${Font};
       font-size: 14px;
       color: ${corTexto};
       cursor: pointer;
       border: none;
-      background-color: ${CorBranca};
+      background-color: ${(props) => props.theme.colors.corContainer};
       transition: 0.3s;
       &:hover {
         color: ${corAtiva};

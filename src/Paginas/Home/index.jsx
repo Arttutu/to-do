@@ -8,23 +8,35 @@ import {
 } from "./styled"
 import banner from "./assets/bg-desktop-light.jpg"
 import bannerMobile from "./assets/bg-mobile-light.jpg"
+import bannerDark from "./assets/bg-desktop-dark.jpg"
+import bannerMobileDark from "./assets/bg-mobile-dark.jpg"
 import lua from "./assets/icon-moon.svg"
+import sol from "./assets/icon-sun.svg"
 import TarefaInput from "../../Componentes/TarefaInput"
 import Tarefa from "../../Componentes/Tarefa"
 import ControladorTarefa from "../../Componentes/ControladorTarefa"
 import { useTarefaContex } from "../../Componentes/Commun/Context/tarefaContext"
 
-export default function Home() {
+export default function Home({ tema }) {
   const { tarefa, filtro } = useTarefaContex()
+
   return (
     <>
       <Main>
-        <Banner src={banner} alt="banner do site de tarefas desktop" />
-        <BannerMobile src={bannerMobile} />
+        <Banner
+          src={tema === "Light" ? banner : bannerDark}
+          alt="banner do site de tarefas desktop"
+        />
+        <BannerMobile
+          src={tema === "Light" ? bannerMobile : bannerMobileDark}
+        />
         <ContainerSection>
           <ContainerTitulo>
             <h1>todo</h1>
-            <img src={lua} alt="Um icone em formato de Lua" />
+            <img
+              src={tema === "Light" ? lua : sol}
+              alt="Um icone em formato de Lua"
+            />
           </ContainerTitulo>
           <TarefaInput />
           {tarefa

@@ -16,13 +16,13 @@ export const ContainerTarefa = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background-color: ${CorBranca};
+  background-color: ${(props) => props.theme.colors.corContainer};
   border-bottom: 1px solid ${CorCinza};
   label {
     display: flex;
     align-items: center;
     gap: 24px;
-    color: ${corTexto};
+    color: ${(props) => props.theme.colors.corTexto};
     font-size: 18px;
     font-family: ${Font};
   }
@@ -31,7 +31,7 @@ export const ContainerTarefa = styled.div`
   }
   button {
     border: none;
-    background-color: ${CorBranca};
+    background-color: ${(props) => props.theme.colors.corContainer};
     img {
       display: none;
     }

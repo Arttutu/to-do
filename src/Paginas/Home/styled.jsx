@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import { CorBranca, Font, corFundo } from "../../Componentes/Variaveis"
+import { CorBranca, Font } from "../../Componentes/Variaveis"
 
 export const Main = styled.main`
-  background-color: ${corFundo};
+  background-color: ${(props) => props.theme.colors.corFundo};
   width: 100vw;
   height: 100vh;
 `
