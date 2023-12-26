@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { ContainerTarefa, InputTarefa } from "./style"
+import { CheckBoxCustom, ContainerTarefa } from "./style"
 import iconeX from "./assets/icon-cross.svg"
 
 import { useTarefaContex } from "../Commun/Context/tarefaContext"
@@ -11,13 +11,15 @@ export default function Tarefa({ item, index }) {
     <ContainerTarefa>
       <div>
         <label>
-          <InputTarefa
-            type="checkbox"
-            onChange={() => {
-              marcarCompleta(index)
-            }}
-          />
-
+          <CheckBoxCustom>
+            <input
+              type="checkbox"
+              onChange={() => {
+                marcarCompleta(index)
+              }}
+            />
+            <span />
+          </CheckBoxCustom>
           <span>{item}</span>
         </label>
       </div>

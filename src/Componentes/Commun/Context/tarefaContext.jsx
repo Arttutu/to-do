@@ -10,11 +10,15 @@ export const TarefaProvider = ({ children }) => {
       isComplete: false,
     },
     {
-      titulo: "Ler por 1 hora",
+      titulo: "Meditar por 10 minutos",
       isComplete: false,
     },
     {
-      titulo: "Ler por 1 hora",
+      titulo: "Faça um desafio de front-end",
+      isComplete: false,
+    },
+    {
+      titulo: "Caminhe no Park 3x",
       isComplete: false,
     },
   ])

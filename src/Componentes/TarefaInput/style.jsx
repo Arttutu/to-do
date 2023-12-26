@@ -23,8 +23,8 @@ export const InputEnviar = styled.input`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 1px solid ${(props) => props.theme.colors.corTexto};
-  ${(props) => props.theme.colors.corContainer};
+  border: 0.5px solid ${(props) => props.theme.colors.corTexto};
+  background-color: ${(props) => props.theme.colors.corContainer};
 `
 export const InputTexto = styled.input`
   border: none;

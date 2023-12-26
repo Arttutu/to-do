@@ -1,10 +1,33 @@
 import styled from "styled-components"
-import { CorBranca, CorCinza, Font, corTexto } from "../Variaveis"
+import { CorCinza, Font } from "../Variaveis"
 
-export const InputTarefa = styled.input`
+export const CheckBoxCustom = styled.label`
+  position: relative;
+  display: inline-block;
   width: 24px;
   height: 24px;
   margin-left: 24px;
+  input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid ${CorCinza};
+    transition: background-color 0.3s ease;
+  }
+  input[type="checkbox"]:checked + span {
+    background-image: url("./assets/icon-check.svg");
+
+    background-size: cover;
+  }
 `
 
 export const ContainerTarefa = styled.div`
