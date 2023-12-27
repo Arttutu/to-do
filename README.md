@@ -16,5 +16,11 @@ Coloque qualquer informação adicional aqui
 
 - [@Arttutu](https://www.github.com/Arttutu)
 
-##Print
+## Print
+
+### Light
 ![](https://github.com/Arttutu/to-do/blob/main/Captura%20de%20tela%202023-12-27%20092944.png?raw=true)
+
+### Dark
+![] (https://github.com/Arttutu/to-do/blob/main/Captura%20de%20tela%202023-12-27%20093724.png?raw=true)
+
