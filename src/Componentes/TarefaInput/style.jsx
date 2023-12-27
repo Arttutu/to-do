@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Font } from "../Variaveis"
+import { CorCinza, Font } from "../Variaveis"
 
 export const ContainerEnviar = styled.form`
   width: 540px;
@@ -23,8 +23,13 @@ export const InputEnviar = styled.input`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 0.5px solid ${(props) => props.theme.colors.corTexto};
+  border: 1px solid ${CorCinza};
   background-color: ${(props) => props.theme.colors.corContainer};
+  cursor: pointer;
+
+  input[type="submit"]:hover {
+    border: 6px solid linear-gradient(#55ddff, #c058f3);
+  }
 `
 export const InputTexto = styled.input`
   border: none;

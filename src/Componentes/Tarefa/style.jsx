@@ -8,6 +8,7 @@ export const CheckBoxCustom = styled.label`
   width: 24px;
   height: 24px;
   margin-left: 24px;
+  cursor: pointer;
   input[type="checkbox"] {
     opacity: 0;
     width: 0;
@@ -29,6 +30,9 @@ export const CheckBoxCustom = styled.label`
     background-repeat: no-repeat;
     border: none;
     background-position: center;
+  }
+  input[type="checkbox"]:hover + span {
+    border: 6px solid linear-gradient(#55ddff, #c058f3);
   }
 `
 

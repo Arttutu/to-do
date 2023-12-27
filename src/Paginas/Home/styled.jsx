@@ -52,6 +52,7 @@ export const ContainerTitulo = styled.div`
   img {
     width: 24px;
     height: 24px;
+    cursor: pointer;
   }
   @media (max-width: 768px) {
     width: 325px;
