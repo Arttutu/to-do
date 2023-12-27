@@ -23,9 +23,12 @@ export default function Tarefa({ item, index }) {
           <span>{item}</span>
         </label>
       </div>
-      <button onClick={() => RemoverTarefa(index)}>
-        <img src={iconeX} alt="Ícone de Remoção" />
-      </button>
+
+      <img
+        src={iconeX}
+        alt="Ícone de Remoção"
+        onClick={() => RemoverTarefa(index)}
+      />
     </ContainerTarefa>
   )
 }

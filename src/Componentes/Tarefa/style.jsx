@@ -58,12 +58,9 @@ export const ContainerTarefa = styled.div`
   label input:checked + span {
     text-decoration: line-through;
   }
-  button {
-    border: none;
-    background-color: ${(props) => props.theme.colors.corContainer};
-    img {
-      display: none;
-    }
+
+  img {
+    display: none;
   }
 
   @media (max-width: 768px) {
