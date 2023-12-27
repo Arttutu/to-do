@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { CorCinza, Font } from "../Variaveis"
+import check from "./assets/icon-check.svg"
 
 export const CheckBoxCustom = styled.label`
   position: relative;
@@ -24,9 +25,10 @@ export const CheckBoxCustom = styled.label`
     transition: background-color 0.3s ease;
   }
   input[type="checkbox"]:checked + span {
-    background-image: url("./assets/icon-check.svg");
-
-    background-size: cover;
+    background: url(${check}), linear-gradient(#55ddff, #c058f3);
+    background-repeat: no-repeat;
+    border: none;
+    background-position: center;
   }
 `
 
