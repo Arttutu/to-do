@@ -49,8 +49,8 @@ export default function Home({ tema, setTema }) {
               filtro === "todas"
                 ? true
                 : filtro === "completa"
-                ? !tarefa.isComplete
-                : tarefa.isComplete
+                ? tarefa.isComplete
+                : !tarefa.isComplete
             )
             .map((item, index) => (
               <Tarefa key={index} item={item.titulo} index={index} />

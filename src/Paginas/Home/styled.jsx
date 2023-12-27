@@ -3,12 +3,12 @@ import { CorBranca, Font } from "../../Componentes/Variaveis"
 
 export const Main = styled.main`
   background-color: ${(props) => props.theme.colors.corFundo};
-  width: 100vw;
-  height: 100vh;
+  max-height: 100%;
+  min-height: 100vh;
 `
 export const Banner = styled.img`
   position: absolute;
-  width: 100vw;
+  min-width: 100%;
   height: 300px;
   top: 0px;
   @media (max-width: 768px) {
