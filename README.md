@@ -22,5 +22,5 @@ Coloque qualquer informação adicional aqui
 ![](https://github.com/Arttutu/to-do/blob/main/Captura%20de%20tela%202023-12-27%20092944.png?raw=true)
 
 ### Dark
-![] (https://github.com/Arttutu/to-do/blob/main/Captura%20de%20tela%202023-12-27%20093724.png?raw=true)
+![](https://github.com/Arttutu/to-do/blob/main/Captura%20de%20tela%202023-12-27%20093724.png?raw=true)
 
