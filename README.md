@@ -8,10 +8,6 @@ Um aplicativo de lista de tarefas construído em React, utilizando Styled Compon
 - [Context API](https://legacy.reactjs.org/docs/context.html)
 - [front-end mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
 
-## Apêndice
-
-Coloque qualquer informação adicional aqui
-
 ## Autores
 
 - [@Arttutu](https://www.github.com/Arttutu)
